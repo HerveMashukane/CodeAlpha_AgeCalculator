@@ -1,4 +1,4 @@
-/* body {
+body {
   background-image: url(./images/bg-calculator.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -114,4 +114,4 @@ button:active {
     opacity: 1;
     transform: translateY(0);
   }
-} */
+}
