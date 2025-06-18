@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Show temporary loading state
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Calculating...';
+     submitBtn.disabled = true;
+     submitBtn.textContent = 'Calculating...';
 
     // Small delay to simulate processing
     setTimeout(() => {
