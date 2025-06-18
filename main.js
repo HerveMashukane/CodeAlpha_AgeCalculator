@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return { years, months, days };
   }
 
-  function daysInPreviousMonth(date) {
-    return new Date(date.getFullYear(), date.getMonth(), 0).getDate();
-  }
-});
+//   function daysInPreviousMonth(date) {
+//     return new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+//   }
+// });
