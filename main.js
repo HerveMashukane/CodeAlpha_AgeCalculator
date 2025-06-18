@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const now = new Date();
 
     if (dob > now) {
+      result.textContent = '';
       showMessage('Date of birth cannot be in the future.', 'red');
       return;
     }
