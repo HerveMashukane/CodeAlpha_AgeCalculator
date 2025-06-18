@@ -1,74 +1,117 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+/* body {
+  background-image: url(./images/bg-calculator.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* keeps bg fixed for nice effect on scroll */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* changed from height for better mobile behavior */
+  color: #34495e; /* general text color */
+}
 
+.container {
+  background-color: rgba(255, 255, 255, 0.95); /* slight transparency for bg image visibility */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  /* Adding subtle fade-in for smoother UI */
+  animation: fadeIn 0.8s ease forwards;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #34495e;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: #2980b9;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  font-weight: 600;
+}
+
+button:hover,
+button:focus {
+  background-color: #1c5980;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#result {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #27ae60;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  min-height: 1.5em; /* avoid layout shift when result is empty */
+}
+
+@media (max-width: 480px) {
   .container {
-    background-color: white;
-    padding: 2rem 3rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    max-width: 400px;
-    width: 100%;
+    padding: 1.5rem 2rem;
+    margin: 1rem;
   }
 
   h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
   }
+}
 
-  label {
-    font-weight: 600;
-    color: #34495e;
+/* Fade-in animation for the container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  input[type="date"] {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-  button {
-    margin-top: 1.5rem;
-    width: 100%;
-    background-color: #2980b9;
-    color: white;
-    font-size: 1.1rem;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #1c5980;
-  }
-
-  #result {
-    font-size: 1.2rem;
-    text-align: center;
-    color: #27ae60;
-    font-weight: 600;
-  }
-
-  @media (max-width: 480px) {
-    .container {
-      padding: 1.5rem 2rem;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-    }
-  }
+} */
