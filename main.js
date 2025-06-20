@@ -4,12 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const result = document.getElementById('result');
   const submitBtn = form.querySelector('button[type="submit"]');
 
-  // Set today's date as the max allowed date in the input
-  const today = new Date();
-  const todayStr = today.toISOString().split('T')[0];
-  dobInput.setAttribute('max', todayStr);
-
-  // Enable the submit button only when a date is entered
+  // Enable the button only when a date is selected
   dobInput.addEventListener('input', () => {
     result.textContent = '';
     result.style.color = '';
@@ -21,47 +16,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dobValue = dobInput.value;
     if (!dobValue) {
-      showMessage('Please enter your date of birth.', 'red');
+      showMessage('⚠️ Please enter your date of birth.', 'red');
       return;
     }
 
     const dob = new Date(dobValue);
-    const now = new Date();
+    const today = new Date();
 
-    if (dob > now) {
-      result.textContent = '';
-      showMessage('Date of birth cannot be in the future.', 'red');
+    if (dob > today) {
+      showMessage('⚠️ Date of birth cannot be in the future.', 'red');
       return;
     }
 
-    // Show temporary loading state
-     submitBtn.disabled = true;
-     submitBtn.textContent = 'Calculating...';
-
-    // Small delay to simulate processing
-    setTimeout(() => {
-      const age = getAge(dob, now);
-      const message = `You are ${age.years} years, ${age.months} months, and ${age.days} days old.`;
-      showMessage(message, '#27ae60');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Calculate Age';
-    }, 400);
+    const age = calculateAge(dob, today);
+    const message = `🎉 You are ${age.years} years, ${age.months} months, and ${age.days} days old.`;
+    showMessage(message, '#27ae60');
   });
 
-  function showMessage(text, color) {
+  const showMessage = (text, color) => {
     result.textContent = text;
     result.style.color = color;
     result.scrollIntoView({ behavior: 'smooth' });
-  }
+  };
 
-  function getAge(birthDate, currentDate) {
+  const calculateAge = (birthDate, currentDate) => {
     let years = currentDate.getFullYear() - birthDate.getFullYear();
     let months = currentDate.getMonth() - birthDate.getMonth();
     let days = currentDate.getDate() - birthDate.getDate();
 
     if (days < 0) {
       months -= 1;
-      days += daysInPreviousMonth(currentDate);
+      days += getDaysInPreviousMonth(currentDate);
     }
 
     if (months < 0) {
@@ -70,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     return { years, months, days };
-  }
+  };
 
-  function daysInPreviousMonth(date) {
+  const getDaysInPreviousMonth = (date) => {
     return new Date(date.getFullYear(), date.getMonth(), 0).getDate();
-  }
+  };
 });
