@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dobInput.addEventListener('input', () => {
     result.textContent = '';
     result.style.color = '';
-    submitBtn.disabled = !dobInput.value;
+    submitBtn.disabled = !dobInput;
   });
 
   form.addEventListener('submit', (e) => {
