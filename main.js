@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       submitBtn.disabled = false;
       submitBtn.textContent = 'Calculate Age';
-    }, 400);
+    }, 900);
   });
 
   const showMessage = (text, color) => {
