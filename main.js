@@ -27,10 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
       showMessage('⚠️ Date of birth cannot be in the future.', 'red');
       return;
     }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Calculating...';
 
-    const age = calculateAge(dob, today);
-    const message = `🎉 You are ${age.years} years, ${age.months} months, and ${age.days} days old.`;
-    showMessage(message, '#27ae60');
+    setTimeout(() => {
+      const age = calculateAge(dob, today);
+      const message = `🎉 You are ${age.years} years, ${age.months} months, and ${age.days} days old.`;
+      showMessage(message, '#27ae60');
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Calculate Age';
+    }, 400);
   });
 
   const showMessage = (text, color) => {
